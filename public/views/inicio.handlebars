@@ -1,0 +1,53 @@
+<p>Bienvenido {{nombre}}</p>
+
+<form action="/logout" method="GET">
+    <input type="submit" value="Log Out">
+</form>
+<form>
+    <label for="title">
+        {{titulo}}
+    </label>
+    <input id="title" type = "text" name="title">
+    <br>
+    <label for="price">
+        {{titulo2}}
+    </label>
+    <input id="price" type = "text" name="price">
+    <br>
+    <label for="thumbnail">
+        {{titulo3}}
+    </label>
+    <input id="thumbnail" type = "text" name="thumbnail">
+    <input id="btn" type="button" value="Subir">
+    <br>
+</form>
+{{!-- 
+ {{#if productos}} --}}
+  <ul id="ulo">
+  {{#each productos}}
+    <li>{{title}} ${{price}} <img src={{thumbnail}} width="70" height="70"> </li>
+
+  {{/each}}
+  
+  </ul>
+    <br>
+  <div> 
+      <label>CHAT</label><br>
+      <input type="text" placeholder="E-mail" id="mail"><br>
+      <input type="text" placeholder="Nombre" id="nombreDeUsuario"><br>
+      <input type="text" placeholder="Apellido" id="apellidoDeUsuario"><br>
+      <input type="number" placeholder="Edad" id="edadDeUsuario"><br>
+      <input type="text" placeholder="Alias" id="aliasDeUsuario"><br>
+      <input type="text" placeholder="Avatar" id="avatarDeUsuario"><br>
+      <input type="button" value="Log In" id="logearse">
+      <ul id="contenedorDeMensajes">
+          {{#each mensajes}}
+            <li><p class="azulNegrita" style="color: blue; font-weight: bold; display: inline-block;">{{author.email}}</p> <p id="normalMarron" style="color: brown; display: inline-block;">{{author.name}}</p> <p id="italicVerde" style="color: green; font-style: italic; display: inline-block;" >{{text}}</p></li>
+            
+          {{/each}}
+      </ul>
+      <input type="text" placeholder="Mensaje" id="barraDeMensaje">
+      <input type="button" value="Enviar" id="botonDeEnviar">
+  </div>
+
+    
